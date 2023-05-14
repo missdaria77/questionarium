@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface QuestionRepository {
+    int checkIfExistId(int id);
+
     Question get(int id) throws SQLException;
 
     void save(Question question);
@@ -14,5 +16,12 @@ public interface QuestionRepository {
 
     void delete(int id);
 
+    Question getRndQuestImpr();
+
     List<Question> getByTopic(String topic) throws SQLException;
+
+    Question getLastQuestion(String text, String topic);
+
+    List<Question> getAllQuestions();
+
 }
